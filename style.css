@@ -71,8 +71,7 @@ body {
     font-size: 15px;
 }
 .task-type {
-    width: 10px;
-    height: 10px;
+    width: 20px;
     border-radius: 5px;
 }
 
@@ -86,4 +85,18 @@ body {
 
 .span-urgent {
     color: red;
+}
+.task-info__container{
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 300px;
+    padding: 10px;
+    color: gray;
+    background-color: #ebebeb;
+    border: 0
+}
+
+.tasks__container{
+    margin-top: 20px;
 }

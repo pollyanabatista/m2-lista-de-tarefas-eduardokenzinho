@@ -10,3 +10,17 @@ const tasks = [
   {title: "Pagar a conta de energia", type: "Urgente"},
   {title: "Assistir a um documentário interessante", type: "Normal"},
 ];
+
+function renderElements (arrayObj){
+  for(let i = 0; i< arrayObj.length; i++){
+    console.log(arrayObj[i]);
+  }
+};
+
+function createTaskItem (title, type){
+  liElement = createElement("li");
+  divElement = createElement("div");
+  spanElement = createElement("span");
+  pElement = createElement("p");
+  buttonElement = createElement("button");
+};
