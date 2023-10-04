@@ -11,16 +11,55 @@ const tasks = [
   {title: "Assistir a um documentário interessante", type: "Normal"},
 ];
 
-function renderElements (arrayObj){
-  for(let i = 0; i< arrayObj.length; i++){
-    console.log(arrayObj[i]);
-  }
-};
+function renderElements(tasks) {
+  const ulElement = document.querySelector(".tasks__list");
 
-function createTaskItem (title, type){
-  liElement = createElement("li");
-  divElement = createElement("div");
-  spanElement = createElement("span");
-  pElement = createElement("p");
-  buttonElement = createElement("button");
-};
+  tasks.forEach(task => {
+    const liElement = document.createElement("li");
+    liElement.textContent = task.title;
+    ulElement.appendChild(liElement);
+  });
+}
+
+renderElements(tasks);
+
+function createTaskItem(task) {
+ 
+  const listItem = document.createElement("li");
+  const taskContainer = document.createElement("div");
+  const taskTitle = document.createElement("span");
+  const taskType = document.createElement("p");
+  const deleteButton = document.createElement("button");
+
+  taskTitle.textContent = task.title;
+  taskType.textContent = task.type;
+  deleteButton.textContent = "Excluir";
+
+  listItem.classList.add(".task__item"); 
+  taskContainer.classList.add(".task-info__container"); 
+
+  taskContainer.appendChild(taskTitle);
+  taskContainer.appendChild(taskType);
+  listItem.appendChild(taskContainer);
+  listItem.appendChild(deleteButton);
+
+  return listItem;
+}
+
+const taskItem = createTaskItem(tasks);
+
+function renderElements(taskArray) {
+  const ulElement = document.getElementByClass('.tasks__list');
+
+  ulElement.innerHTML = '';
+
+  for (let i = 0; i < taskArray.length; i++) {
+    const currentTask = taskArray[i];
+    const taskItemElement = createTaskItem(currentTask);
+    ulElement.appendChild(taskItemElement);
+  }
+}
+
+renderElements(tasks);
+
+
