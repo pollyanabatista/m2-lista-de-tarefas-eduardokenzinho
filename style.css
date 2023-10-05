@@ -56,6 +56,7 @@ body {
     background-color: #3b5bdb;
     color:white;
     border: 0;
+    transition: 0.5s;
 }
 
 .form__button--add-task:hover{
@@ -126,6 +127,7 @@ body {
     background-color: #3b5bdb;
     color: white;
     border: 0;
+    transition: 0.5s;
 }
 
 .task__button--remove-task:hover{
