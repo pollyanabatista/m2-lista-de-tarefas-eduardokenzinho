@@ -71,20 +71,21 @@ body {
     font-size: 15px;
 }
 .task-type {
-    width: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 5px;
 }
 
 .span-important {
-    color: yellow;
+    background-color: yellow;
 }
 
 .span-normal {
-    color:green;
+    background-color:green;
 }
 
 .span-urgent {
-    color: red;
+    background-color: red;
 }
 .task-info__container{
     margin-top: 20px;
@@ -99,4 +100,24 @@ body {
 
 .tasks__container{
     margin-top: 20px;
+}
+
+.task-info__container{
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.task__item{
+    display:flex;
+    align-items: center;
+}
+
+.task__button--remove-task{
+    border-radius: 5px;
+    width: 150px;
+    padding: 10px;
+    background-color: #3b5bdb;
+    color: white;
+    border: 0;
 }

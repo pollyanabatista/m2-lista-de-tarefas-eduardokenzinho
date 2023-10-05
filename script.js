@@ -12,34 +12,39 @@ const tasks = [
 ];
 
 function renderElements(tasks) {
-  const ulElement = document.querySelector(".tasks__list");
+  const ulElement = document.querySelector('ul');
 
-  tasks.forEach(task => {
-    const liElement = document.createElement("li");
-    liElement.textContent = task.title;
-    ulElement.appendChild(liElement);
-  });
+  console.log(`Número de tarefas: ${tasks.length}`);
 }
 
-renderElements(tasks);
+//renderElements(tasks);
 
 function createTaskItem(task) {
  
   const listItem = document.createElement("li");
   const taskContainer = document.createElement("div");
-  const taskTitle = document.createElement("span");
-  const taskType = document.createElement("p");
+  const taskTitle = document.createElement("p");
+  const taskType = document.createElement("span");
   const deleteButton = document.createElement("button");
 
   taskTitle.textContent = task.title;
-  taskType.textContent = task.type;
   deleteButton.textContent = "Excluir";
 
-  listItem.classList.add(".task__item"); 
-  taskContainer.classList.add(".task-info__container"); 
+  listItem.classList.add("task__item"); 
+  taskContainer.classList.add("task-info__container");
+  taskType.classList.add("task-type");
+  deleteButton.classList.add("task__button--remove-task");
 
-  taskContainer.appendChild(taskTitle);
+  if(task.type == "Normal"){
+    taskType.classList.add("span-normal");
+  }else if(task.type == "Urgente"){
+    taskType.classList.add("span-urgent");
+  }else if(task.type == "Importante"){
+    taskType.classList.add("span-important");
+  }
+
   taskContainer.appendChild(taskType);
+  taskContainer.appendChild(taskTitle);
   listItem.appendChild(taskContainer);
   listItem.appendChild(deleteButton);
 
@@ -49,7 +54,7 @@ function createTaskItem(task) {
 const taskItem = createTaskItem(tasks);
 
 function renderElements(taskArray) {
-  const ulElement = document.getElementByClass('.tasks__list');
+  const ulElement = document.querySelector('.tasks__list');
 
   ulElement.innerHTML = '';
 
