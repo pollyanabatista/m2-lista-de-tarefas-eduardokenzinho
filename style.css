@@ -135,3 +135,19 @@ body {
     color: #3b5bdb;
     border: 2px solid #3b5bdb;
 }
+
+.tasks__container {
+    padding: 90px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.form__container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.main__container{
+    background-color: #e2e2e2;
+}
