@@ -140,12 +140,14 @@ body {
     padding: 90px;
     border-radius: 10px;
     background-color: white;
+    color:#3b5bdb;
 }
 
 .form__container {
     padding: 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color:white;
+    color:#3b5bdb;
 }
 
 .main__container{

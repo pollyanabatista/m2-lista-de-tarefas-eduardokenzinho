@@ -11,14 +11,6 @@ const tasks = [
   {title: "Assistir a um documentário interessante", type: "Normal"},
 ];
 
-function renderElements(tasks) {
-  const ulElement = document.querySelector('ul');
-
-  console.log(`Número de tarefas: ${tasks.length}`);
-}
-
-//renderElements(tasks);
-
 function createTaskItem(task) {
  
   const listItem = document.createElement("li");
@@ -42,19 +34,29 @@ function createTaskItem(task) {
   }else if(task.type == "Importante"){
     taskType.classList.add("span-important");
   }
+  deleteButton.addEventListener('click', function(){
+    const apagaItem = tasks.findIndex(function(item){
+      return item.title === task.title && item.type === task.type
+    }) 
+    tasks.splice(apagaItem,1)
+    renderElements(tasks);
+  })
 
   taskContainer.appendChild(taskType);
   taskContainer.appendChild(taskTitle);
   listItem.appendChild(taskContainer);
   listItem.appendChild(deleteButton);
 
+  
   return listItem;
+
+
 }
 
 const taskItem = createTaskItem(tasks);
 
 function renderElements(taskArray) {
-  const ulElement = document.querySelector('.tasks__list');
+  const ulElement = document.querySelector('ul');
 
   ulElement.innerHTML = '';
 
@@ -63,9 +65,23 @@ function renderElements(taskArray) {
     const taskItemElement = createTaskItem(currentTask);
     ulElement.appendChild(taskItemElement);
   }
+  
 }
 
 renderElements(tasks);
 
 
-
+const addButton = document.querySelector('.form__button--add-task');
+addButton.addEventListener('click', function (event) {
+   event.preventDefault(); 
+   const title =  document.getElementById('input_title').value;
+   const type = document.querySelector('select').value;
+   
+   const newObj = {
+    title: title,
+    type: type,
+   }
+   tasks.push(newObj);
+   renderElements(tasks);
+  }
+);
