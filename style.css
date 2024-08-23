@@ -5,6 +5,7 @@ body {
 .header__content {
     display: flex;
     justify-content: space-evenly;
+    margin: 10px;
 }
 
 .header__title {
@@ -107,6 +108,9 @@ body {
 
 .tasks__container{
     margin-top: 20px;
+    margin-bottom: 50px;
+    width: 475px;
+    height: 470px;
 }
 
 .task-info__container{
@@ -144,6 +148,7 @@ body {
 }
 
 .form__container {
+    margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
     background-color:white;
